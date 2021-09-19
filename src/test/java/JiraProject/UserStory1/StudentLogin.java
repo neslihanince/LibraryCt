@@ -1,4 +1,4 @@
-package JiraProject.userStory1;
+package JiraProject.UserStory1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
