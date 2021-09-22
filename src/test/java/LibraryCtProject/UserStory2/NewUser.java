@@ -1,4 +1,4 @@
-package JiraProject.UserStory2;
+package LibraryCtProject.UserStory2;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -28,18 +28,23 @@ public class NewUser {
             Thread.sleep(2500);
             WebElement usersClick = driver.findElement(By.linkText("Users"));
             usersClick.click();
+            Thread.sleep(2500);
             WebElement beforeNumberOfUsers=driver.findElement(By.id("tbl_users_info"));
             WebElement addUser = driver.findElement(By.linkText("Add User"));
             addUser.click();
             Thread.sleep(2500);
             WebElement fullName = driver.findElement(By.xpath("//input[@name='full_name']"));
             fullName.sendKeys("NesLihan Ince");
+            Thread.sleep(2500);
             WebElement addPassword = driver.findElement(By.xpath("//input[@placeholder='Password']"));
             addPassword.sendKeys("Nes123");
+            Thread.sleep(2500);
             WebElement addEmail = driver.findElement(By.xpath("//input[@name='email']"));
             addEmail.sendKeys("Neslihan@gmail.com");
+            Thread.sleep(2500);
             WebElement addAddress = driver.findElement(By.id("address"));
             addAddress.sendKeys("706 galleria");
+            Thread.sleep(2500);
             WebElement saveChanges = driver.findElement(By.xpath("//button[@type='submit']"));
             saveChanges.click();
             Thread.sleep(2500);

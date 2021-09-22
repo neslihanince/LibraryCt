@@ -1,4 +1,4 @@
-package JiraProject.UserStory1;
+package LibraryCtProject.UserStory1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -13,6 +13,7 @@ public class InvalidEmailOrPassword {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://library2.cybertekschool.com/login.html");
+        driver.manage().window().maximize();
         Thread.sleep(2500);
         driver.get(driver.getCurrentUrl());
         String email = "Neslihanince@gmail.com";
@@ -20,12 +21,12 @@ public class InvalidEmailOrPassword {
         emailBox.sendKeys(email);
         WebElement password = driver.findElement(By.id("inputPassword"));
         password.sendKeys("Sdet2022*");
-        WebElement signIn = driver.findElement(By.xpath("//button[@class=btn btn-lg btn-primary btn-block"));
+        WebElement signIn = driver.findElement(By.xpath("//button[@class='btn btn-lg btn-primary btn-block']"));
         signIn.click();
         Thread.sleep(2500);
         WebElement invalid = driver.findElement(By.xpath("//div[@class=alert alert-danger"));
         System.out.println("invalid.getText() = " + invalid.getText());
-        if (invalid.getText().equals("Soory, Wrong Email or Password")){
+        if (invalid.getText().equals("Sorry, Wrong Email or Password")){
             System.out.println("Test passed");
         }else{
             System.out.println("Test failed");
